@@ -41,9 +41,22 @@ def fix(s,car):
     return s1
 
 
+def mezclar(a,b):
+    '''
+    Dados dos strings `a` y `b`, implementar la función `mezclar` que devuleve
+    el string `a` y `b` separados por un espacio, excepto los primeros 
+    caracteres de cada string que son intercambiados. Por ejemplo, 
+    `mezclar('mix' , 'pod')` devuelve `pix mod`.
+    '''
+    c = b[0] + a[1:] + ' ' + a[0] + b[1:]
+    return c
+
+
+
+
 ev_facturas(-5)
 print(ambos('primavera'))
 fix('burbubuja','u')
-
+print(mezclar('mix','pod'))
 
 
