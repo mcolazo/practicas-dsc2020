@@ -1,4 +1,6 @@
 import numpy as np
+from collections import Counter
+
 
 
 def ev_facturas(nfacturas=0):
@@ -21,12 +23,27 @@ def ambos(s=''):
     if len(s)< 2:
         res = ''
     else:
-        res = s[0] + s[1] + s[-2] + s[-1]
+        res = s[:2] + s[-2:]
     return res
+
+
+def fix(s,car):
+    '''
+    Dado un string `s`, implementar una función `fix` que reemplaza todas las
+    ocurrencias del primer caracter por `*` a excepción de la primera 
+    ocurrencia.
+    '''
+    cuenta = Counter(s)
+    nrep = cuenta[car]
+    s = s[::-1]
+    s1 = s.replace(car,'*',nrep - 1)
+    s1 = s1[::-1]
+    return s1
 
 
 ev_facturas(-5)
 print(ambos('primavera'))
+fix('burbubuja','u')
 
 
 
